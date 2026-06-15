@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YF Music Player</title>
+
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  >
+</head>
+
+<body>
+
+  <audio></audio>
+
+  <header class="hero">
+    <div class="hero-content">
+      <span class="badge">Featured Project</span>
+
+      <h1> Listenify Music Player 🎵</h1>
+
+      <p class="hero-description">
+        A modern music player built with Vanilla.
+      </p>
+
+      <div class="hero-links">
+
+        <a href="#" class="hero-btn outline">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="container musics">
+
+    <h2>Trending Music</h2>
+
+    <div class="musics-container">
+
+      <article class="music-card">
+        <header>
+          <img src="./assets/images/1.jpg" alt="cover">
+
+          <div class="play-music">
+            <button class="play-btn" data-src="./assets/audios/1.mp3">
+              <i class="fa fa-play"></i>
+            </button>
+          </div>
+        </header>
+
+        <main>
+          <p class="title-music">Midnight Echoes</p>
+          <p class="artist-music">Luna Sky</p>
+        </main>
+      </article>
+
+      <article class="music-card">
+        <header>
+          <img src="./assets/images/2.jpg" alt="cover">
+
+          <div class="play-music">
+            <button class="play-btn" data-src="./assets/audios/2.mp3">
+              <i class="fa fa-play"></i>
+            </button>
+          </div>
+        </header>
+
+        <main>
+          <p class="title-music">Waves of Tomorrow</p>
+          <p class="artist-music">Silver Horizon</p>
+        </main>
+      </article>
+
+      <article class="music-card">
+        <header>
+          <img src="./assets/images/3.jpg" alt="cover">
+
+          <div class="play-music">
+            <button class="play-btn" data-src="./assets/audios/3.mp3">
+              <i class="fa fa-play"></i>
+            </button>
+          </div>
+        </header>
+
+        <main>
+          <p class="title-music">Burning Ashes</p>
+          <p class="artist-music">Scarlet Valley</p>
+        </main>
+      </article>
+
+      <article class="music-card">
+        <header>
+          <img src="./assets/images/4.jpg" alt="cover">
+
+          <div class="play-music">
+            <button class="play-btn" data-src="./assets/audios/4.mp3">
+              <i class="fa fa-play"></i>
+            </button>
+          </div>
+        </header>
+
+        <main>
+          <p class="title-music">Neon Dreams</p>
+          <p class="artist-music">Electric Shadow</p>
+        </main>
+      </article>
+
+      <article class="music-card">
+        <header>
+          <img src="./assets/images/5.png" alt="cover">
+
+          <div class="play-music">
+            <button class="play-btn" data-src="./assets/audios/5.mp3">
+              <i class="fa fa-play"></i>
+            </button>
+          </div>
+        </header>
+
+        <main>
+          <p class="title-music">Whispers of Wind</p>
+          <p class="artist-music">Aurelia Night</p>
+        </main>
+      </article>
+
+      <article class="music-card">
+        <header>
+          <img src="./assets/images/6.jpg" alt="cover">
+
+          <div class="play-music">
+            <button class="play-btn" data-src="./assets/audios/6.mp3">
+              <i class="fa fa-play"></i>
+            </button>
+          </div>
+        </header>
+
+        <main>
+          <p class="title-music">Chasing Sunset</p>
+          <p class="artist-music">Golden Fantasy</p>
+        </main>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="music-player">
+
+    <div class="music-details">
+      <div>
+        <p class="music-name">Midnight Echoes</p>
+        <p class="artist">Luna Sky</p>
+      </div>
+
+      <button class="like">
+        <i class="fa-solid fa-heart"></i>
+      </button>
+    </div>
+
+    <div class="player-content">
+
+      <div class="buttons">
+
+        <button class="back-forward">
+          <i class="fa-solid fa-forward"></i>
+        </button>
+
+        <button class="play-button">
+          <i class="fa fa-play play-icon"></i>
+        </button>
+
+        <button class="forward">
+          <i class="fa-solid fa-forward"></i>
+        </button>
+
+      </div>
+
+      <div class="timer">
+
+        <div class="currentTime">0:00</div>
+
+        <div class="process-bar">
+          <div class="current-time"></div>
+        </div>
+
+        <div class="timerMain">0:00</div>
+
+      </div>
+
+    </div>
+
+    <div class="controls">
+
+      <button class="device">
+        <i class="fa-solid fa-computer"></i>
+      </button>
+
+      <div class="volume-handler">
+        <button>
+          <i class="fa fa-volume-up"></i>
+        </button>
+
+        <div class="volume-card">
+          <div class="volume"></div>
+        </div>
+      </div>
+
+      <button>
+        <i class="fa-solid fa-expand"></i>
+      </button>
+
+    </div>
+
+  </footer>
+
+  <nav class="mobile-toast">
+    <button><i class="fa-solid fa-house"></i></button>
+    <button><i class="fa-solid fa-music"></i></button>
+    <button><i class="fa-solid fa-heart"></i></button>
+    <button><i class="fa-solid fa-user"></i></button>
+  </nav>
+
+  <script src="./js/app.js"></script>
+
+</body>
+</html>
