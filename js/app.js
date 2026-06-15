@@ -133,11 +133,8 @@ function backForwardMusic() {
 }
 
 function playOrPauseMusic(iconMusic) {
-      playBtn.forEach((btn) => {
-      btn.querySelector("i").className = "fa fa-play";
-    });
-  if(currentIcon.className === "fa fa-play" && music.paused){
-     playIcon.className = "fa fa-play play-icon";
+  if(music.currentTime === 0){
+    music.src = playBtn[currentMusic].dataset.src;
   }
   if (music.paused) {
     music.play();
