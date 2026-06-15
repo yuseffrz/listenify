@@ -134,6 +134,7 @@ function backForwardMusic() {
 
 function playOrPauseMusic(iconMusic) {
   if(music.currentTime === 0){
+    iconMusic = playBtn[currentMusic].querySelector('i').className = "fa fa-pause"
     music.src = playBtn[currentMusic].dataset.src;
   }
   if (music.paused) {
