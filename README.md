@@ -37,4 +37,3 @@ Structuring a small JavaScript project
 Yousef
 GitHub: https://github.com/yuseffrz
 preview https://listenify-player.vercel.app
-ؤث
