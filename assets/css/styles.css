@@ -145,6 +145,12 @@ body{
   box-shadow:var(--shadow);
 }
 
+.music-card.active .play-music{
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(8px); 
+  opacity: 1;
+}
+
 .music-card header{
   position:relative;
 }
@@ -189,8 +195,6 @@ body{
 
   color:white;
   font-size:1.2rem;
-
-  cursor:pointer;
 }
 
 .music-card main{
@@ -407,7 +411,6 @@ body{
 }
 
 button{
-  cursor:pointer;
   border:none;
   background:none;
 }
@@ -424,4 +427,53 @@ img{
 
 .back-forward i{
   transform: rotateY(180deg);
+}
+
+/* BOOKMARK */
+
+.bookmark{
+  position:absolute;
+  top:12px;
+  right:12px;
+  z-index:5;
+
+  opacity:0;
+  transform:translateY(-5px);
+
+  transition:.3s;
+}
+
+.music-card:hover .bookmark{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.bookmark-btn{
+  width:36px;
+  height:36px;
+
+  border-radius:10px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(10px);
+
+  color:white;
+
+  transition:.25s;
+}
+
+.bookmark-btn:hover{
+  background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+}
+
+.bookmark-btn i{
+  font-size:.9rem;
 }
