@@ -36,4 +36,4 @@ Structuring a small JavaScript project
 👨‍💻 Author
 Yousef
 GitHub: https://github.com/yuseffrz
-preview https://listenify-player.vercel.app
+preview: https://listenify-player.vercel.app
