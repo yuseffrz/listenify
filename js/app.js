@@ -133,9 +133,13 @@ function backForwardMusic() {
 }
 
 function playOrPauseMusic(iconMusic) {
-  if(music.currentTime === 0){
-    iconMusic = playBtn[currentMusic].querySelector('i').className = "fa fa-pause"
+  if(music.currentTime === 0 && playIcon.className === 'fa fa-play play-icon'){
     music.src = playBtn[currentMusic].dataset.src;
+    currentIcon = playBtn[currentMusic].querySelector('i')
+    currentIcon.className = "fa fa-pause"
+  }else{
+    currentIcon = playBtn[currentMusic].querySelector('i')
+    currentIcon.className = "fa fa-play"
   }
   if (music.paused) {
     music.play();
