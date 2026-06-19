@@ -120,11 +120,22 @@ body{
   margin-bottom:30px;
 }
 
+.playlist-title{
+  margin-top: 40px;
+  text-align: center;
+}
+
 .musics-container{
   display:grid;
   grid-template-columns:
       repeat(auto-fit,minmax(220px,1fr));
 
+  gap:24px;
+}
+
+.playlists-container{
+  display:grid;
+grid-template-columns: repeat(auto-fill, 245px);
   gap:24px;
 }
 
@@ -372,13 +383,13 @@ body{
   }
 
   .music-player{
-    flex-direction:column;
+    flex-direction: column;
     gap:20px;
   }
 
-  .controls{
+  /* .controls{
     display:none;
-  }
+  } */
 
   .mobile-toast{
     position:fixed;
@@ -476,4 +487,220 @@ img{
 
 .bookmark-btn i{
   font-size:.9rem;
+}
+
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 16px;
+    padding-bottom: 240px;
+  }
+
+  .hero {
+    margin-bottom: 45px;
+  }
+
+  .hero-content {
+    padding: 28px 22px;
+    border-radius: 24px;
+  }
+
+  .badge {
+    font-size: .75rem;
+    padding: 7px 12px;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+    line-height: 1.15;
+  }
+
+  .hero-description {
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+
+  .hero-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    text-align: center;
+    padding: 13px 18px;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .musics h2 {
+    font-size: 1.5rem;
+    margin-bottom: 22px;
+  }
+
+  .musics-container,
+  .playlists-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .music-card {
+    border-radius: 18px;
+  }
+
+  .music-card:hover {
+    transform: none;
+  }
+
+  .music-card main {
+    padding: 13px;
+  }
+
+  .title-music {
+    font-size: .9rem;
+    line-height: 1.4;
+  }
+
+  .artist-music {
+    font-size: .78rem;
+  }
+
+  .play-music {
+    opacity: 1;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,.65),
+      rgba(0,0,0,.05)
+    );
+    backdrop-filter: none;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 12px;
+  }
+
+  .play-btn {
+    width: 46px;
+    height: 46px;
+    font-size: .95rem;
+  }
+
+  .bookmark {
+    opacity: 1;
+    transform: translateY(0);
+    top: 10px;
+    right: 10px;
+  }
+
+  .bookmark-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+  }
+
+  .music-player {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .music-details {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .music-name {
+    font-size: .95rem;
+  }
+
+  .artist {
+    font-size: .78rem;
+  }
+
+  .player-content {
+    width: 100%;
+    margin: 0;
+  }
+
+  .buttons {
+    gap: 22px;
+  }
+
+  .buttons button {
+    font-size: 1rem;
+  }
+
+  .play-button {
+    width: 46px;
+    height: 46px;
+  }
+
+  .timer {
+    margin-top: 12px;
+    gap: 8px;
+  }
+
+  .currentTime,
+  .timerMain {
+    font-size: .72rem;
+  }
+
+  .controls {
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .volume-card {
+    width: 90px;
+  }
+}
+
+/* گوشی‌های خیلی کوچک */
+
+@media (max-width: 420px) {
+
+  body {
+    padding: 12px;
+    padding-bottom: 250px;
+  }
+
+  .hero-content {
+    padding: 24px 18px;
+  }
+
+  .hero h1 {
+    font-size: 1.3rem;
+  }
+
+  .musics-container,
+  .playlists-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .music-card {
+    max-width: 310px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .music-player {
+    padding: 14px;
+  }
+
+  .controls {
+    flex-wrap: wrap;
+  }
+
+  .volume-card {
+    width: 120px;
+  }
 }

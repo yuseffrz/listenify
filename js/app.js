@@ -17,15 +17,10 @@ let musicName = document.querySelector(".music-name");
 let artist = document.querySelector(".artist");
 let musicCard;
 let bookmarkBtn;
-let bookmarked = null;
+let bookmarked;
 let musicsContainer = document.querySelector(".musics-container");
-
-// bookmarkBtn.forEach(function(item){
-//   item.addEventListener('click',function(){
-//   bookmarked = item.parentElement.previousElementSibling.querySelector('.play-btn')
-//   console.log(bookmarked.dataset.src)
-//   })
-// })
+let playlists = [];
+let playlistContainer = document.querySelector(".playlists-container");
 
 let musics = [
   {
@@ -73,6 +68,7 @@ let musics = [
 ];
 
 function renderMusics() {
+  musicsContainer.innerHTML = "";
   musics.forEach(function (item) {
     musicsContainer.insertAdjacentHTML(
       "beforeend",
@@ -103,10 +99,86 @@ function renderMusics() {
   });
 
   playBtn = document.querySelectorAll(".play-btn");
-  bookmarkBtn = document.querySelectorAll(".bookmark-btn");
   musicCard = document.querySelectorAll(".music-card");
+  bookmarkBtn = document.querySelectorAll(".bookmark-btn");
 
   playBtn.forEach(playMusic);
+
+  bookmarkBtn.forEach(function (item) {
+    item.addEventListener("click", function () {
+      bookmarked =
+        item.parentElement.previousElementSibling.querySelector(".play-btn")
+          .dataset.src;
+      let findMusic = musics.find(function (music) {
+        return music.src === bookmarked;
+      });
+      console.log(findMusic);
+      addToPlaylists(findMusic);
+    });
+  });
+}
+
+function renderPlayLists() {
+  playlistContainer.innerHTML = "";
+  playlists.forEach(function (item) {
+    playlistContainer.insertAdjacentHTML(
+      "beforeend",
+      `
+        <article class="music-card">
+          <header>
+            <img src="${item.cover}" alt="cover" />
+
+            <div class="play-music">
+              <button class="play-btn" data-src="${item.src}">
+                <i class="fa fa-play"></i>
+              </button>
+            </div>
+            <div class="bookmark">
+              <button class="bookmark-btn">
+                <i class="fa-regular fa-bookmark"></i>
+              </button>
+            </div>
+          </header>
+
+          <main>
+            <p class="title-music">${item.title}</p>
+            <p class="artist-music">${item.artistMusic}</p>
+          </main>
+        </article>
+      `,
+    );
+  });
+  playBtn = document.querySelectorAll(".play-btn");
+  musicCard = document.querySelectorAll(".music-card");
+  bookmarkBtn = document.querySelectorAll(".bookmark-btn");
+
+  playBtn.forEach(playMusic);
+  document.querySelector(".playlist-found").innerHTML = "";
+  playlistContainer.querySelectorAll(".bookmark-btn").forEach(function (item) {
+    item.addEventListener("click", function () {
+      bookmarked =
+        item.parentElement.previousElementSibling.querySelector(".play-btn")
+          .dataset.src;
+
+      let findMusic = musics.find(function (music) {
+        return music.src === bookmarked;
+      });
+
+      addToPlaylists(findMusic);
+    });
+  });
+}
+
+function addToPlaylists(music) {
+  let hasNotPlayList = playlists.findIndex(function (item) {
+    return item.src === music.src;
+  });
+  if (hasNotPlayList === -1) {
+    playlists.push(music);
+  } else {
+    playlists.splice(hasNotPlayList, 1);
+  }
+  renderPlayLists();
 }
 
 volume.style.width = "100%";
